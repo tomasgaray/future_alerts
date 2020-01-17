@@ -102,12 +102,7 @@ class FutureAlert
                 right: _padding,
                 child: CircleAvatar(
                   child: Container(
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage("assets/icons/help.png", package: 'future_alert'),
-                        fit: BoxFit.fitHeight
-                      )
-                    ),
+                    child: Icon(Icons.help, size: 70.0,)
                   ),
                   //backgroundImage: AssetImage("assets/help.png"),
                   radius: _avatarRadius,
@@ -205,12 +200,7 @@ class FutureAlert
                   child: CircleAvatar(
                     backgroundColor: colors,
                     child: Container(
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage("assets/icons/done.png", package: 'future_alert'),
-                              fit: BoxFit.fitHeight
-                          )
-                      ),
+                      child: Icon(Icons.done, size: 70.0, color: Colors.white,)
                     ),
                     //backgroundImage: AssetImage("assets/help.png"),
                     radius: _avatarRadius,
@@ -307,13 +297,8 @@ class FutureAlert
                   right: _padding,
                   child: CircleAvatar(
                     backgroundColor: Colors.red[800],
-                    child: Container(
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage("assets/icons/error.png", package: 'future_alert'),
-                              fit: BoxFit.fitHeight
-                          )
-                      ),
+                      child: Container(
+                        child: Icon(Icons.close, size: 70.0, color: Colors.white,)
                     ),
                     //backgroundImage: AssetImage("assets/help.png"),
                     radius: _avatarRadius,
@@ -410,13 +395,8 @@ class FutureAlert
                   right: _padding,
                   child: CircleAvatar(
                     backgroundColor: Colors.lightBlueAccent,
-                    child: Container(
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage("assets/icons/info.png", package: 'future_alert'),
-                              fit: BoxFit.fitHeight
-                          )
-                      ),
+                      child: Container(
+                        child: Icon(Icons.info_outline, size: 70.0, color: Colors.white,)
                     ),
                     //backgroundImage: AssetImage("assets/help.png"),
                     radius: _avatarRadius,
@@ -515,12 +495,7 @@ class FutureAlert
                   child: CircleAvatar(
                     backgroundColor: Colors.yellow[800],
                     child: Container(
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage("assets/icons/warning.png", package: 'future_alert'),
-                              fit: BoxFit.fitHeight
-                          )
-                      ),
+                      child: Icon(Icons.warning, size: 70.0, color: Colors.white,)
                     ),
                     //backgroundImage: AssetImage("assets/help.png"),
                     radius: _avatarRadius,
