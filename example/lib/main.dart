@@ -96,7 +96,9 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               child: Text("Question", style: TextStyle(color: Colors.white),),
               onPressed: (){
-                FutureAlert.question(context, "What'd you say?", "Choose wisely");
+                FutureAlert.question(context, "What'd you say?", "Choose wisely").then((value){
+                  print(value);
+                });
               },
             ),
           ],
