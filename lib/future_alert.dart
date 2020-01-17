@@ -7,7 +7,7 @@ class FutureAlert
   static const double _padding = 16.0;
   static const double _avatarRadius = 46.0;
 
- static  Future<bool> question(BuildContext context, String titulo, String descripcion, [String si = "Si Por favor", String no = "No"]) async
+ static  Future<bool> question(BuildContext context, String titulo, String descripcion, [String yes = "Yes", String no = "No"]) async
   {
     var resultado = await  showDialog(
       barrierDismissible: false,
@@ -72,7 +72,7 @@ class FutureAlert
                               onPressed: () {
                                 Navigator.of(context).pop(); // To close the dialog
                               },
-                              child: Text("Aceptar", style: TextStyle(
+                              child: Text(yes, style: TextStyle(
                                   color: Colors.white
                               ),),
                               color: Colors.blueAccent,
@@ -85,7 +85,7 @@ class FutureAlert
                                 Navigator.of(context).pop(); // To close the dialog
                                 return new Future<bool>.value(false);
                               },
-                              child: Text("Cancelar", style: TextStyle(
+                              child: Text(no, style: TextStyle(
                                 color: Colors.white
                               ),),
                               color: Colors.redAccent,
