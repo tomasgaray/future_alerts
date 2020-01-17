@@ -1,7 +1,538 @@
 library future_alert;
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
+class FutureAlert
+{
+  static const double _padding = 16.0;
+  static const double _avatarRadius = 46.0;
+
+ static  Future<bool> question(BuildContext context, String titulo, String descripcion, [String si = "Si Por favor", String no = "No"]) async
+  {
+    var resultado = await  showDialog(
+      barrierDismissible: false,
+      context: context,
+       builder: (BuildContext context){
+        return new Dialog(
+          //backgroundColor: Colors.transparent,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0)
+          ),
+          elevation: 0.0,
+          backgroundColor: Colors.transparent,
+          child: Stack(
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.only(
+                  top: _avatarRadius + _padding,
+                  bottom: _padding,
+                  left : _padding,
+                  right: _padding
+                ),
+                margin: EdgeInsets.only(top: _avatarRadius),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.rectangle,
+                  borderRadius: BorderRadius.circular(_padding),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black26,
+                      blurRadius: 10.0,
+                      offset: const Offset(0.0, 10.0)
+                    )
+                  ]
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    Text(
+                      titulo,
+                      style: TextStyle(
+                        fontSize: 24.0,
+                        fontWeight: FontWeight.w700
+                      ),
+                    ),
+                    SizedBox(height: 16.0),
+                    Text(
+                      descripcion,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 16.0,
+                      ),
+                    ),
+                    SizedBox(height: 24.0),
+                    Align(
+                      alignment: Alignment.bottomRight,
+                      child: Container(
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            RaisedButton(
+                              onPressed: () {
+                                Navigator.of(context).pop(); // To close the dialog
+                              },
+                              child: Text("Aceptar", style: TextStyle(
+                                  color: Colors.white
+                              ),),
+                              color: Colors.blueAccent,
+                            ),
+                            SizedBox(
+                              width: 5.0,
+                            ),
+                            RaisedButton(
+                              onPressed: () {
+                                Navigator.of(context).pop(); // To close the dialog
+                                return new Future<bool>.value(false);
+                              },
+                              child: Text("Cancelar", style: TextStyle(
+                                color: Colors.white
+                              ),),
+                              color: Colors.redAccent,
+                            ),
+                          ],
+                        ),
+                      )
+                    )
+                  ],
+                ),
+              ),
+              Positioned(
+                left: _padding,
+                right: _padding,
+                child: CircleAvatar(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage("assets/icons/help.png"),
+                        fit: BoxFit.fitHeight
+                      )
+                    ),
+                  ),
+                  //backgroundImage: AssetImage("assets/help.png"),
+                  radius: _avatarRadius,
+                ),
+              ),
+            ],
+          ),
+
+      );
+    }
+    );
+    return new Future<bool>.value(resultado) ;
+}
+
+  static  Future<bool> done(BuildContext context, String titulo, String descripcion) async
+  {
+    var resultado = await  showDialog(
+        barrierDismissible: false,
+        context: context,
+        builder: (BuildContext context){
+          return new Dialog(
+            //backgroundColor: Colors.transparent,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0)
+            ),
+            elevation: 0.0,
+            backgroundColor: Colors.transparent,
+            child: Stack(
+              children: <Widget>[
+                Container(
+                  padding: EdgeInsets.only(
+                      top: _avatarRadius + _padding,
+                      bottom: _padding,
+                      left : _padding,
+                      right: _padding
+                  ),
+                  margin: EdgeInsets.only(top: _avatarRadius),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.rectangle,
+                      borderRadius: BorderRadius.circular(_padding),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.black26,
+                            blurRadius: 10.0,
+                            offset: const Offset(0.0, 10.0)
+                        )
+                      ]
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Text(
+                        titulo,
+                        style: TextStyle(
+                            fontSize: 24.0,
+                            fontWeight: FontWeight.w700
+                        ),
+                      ),
+                      SizedBox(height: 16.0),
+                      Text(
+                        descripcion,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 16.0,
+                        ),
+                      ),
+                      SizedBox(height: 24.0),
+                      Align(
+                          alignment: Alignment.bottomRight,
+                          child: Container(
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                RaisedButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pop(); // To close the dialog
+                                  },
+                                  child: Text("Aceptar", style: TextStyle(
+                                      color: Colors.white
+                                  ),),
+                                  color: Colors.green[800],
+                                ),
+                              ],
+                            ),
+                          )
+                      )
+                    ],
+                  ),
+                ),
+                Positioned(
+                  left: _padding,
+                  right: _padding,
+                  child: CircleAvatar(
+                    backgroundColor: Colors.green[800],
+                    child: Container(
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage("assets/icons/done.png"),
+                              fit: BoxFit.fitHeight
+                          )
+                      ),
+                    ),
+                    //backgroundImage: AssetImage("assets/help.png"),
+                    radius: _avatarRadius,
+                  ),
+                ),
+              ],
+            ),
+
+          );
+        }
+    );
+    return new Future<bool>.value(resultado) ;
+  }
+
+  static  Future<bool> error(BuildContext context, String titulo, String descripcion) async
+  {
+    var resultado = await  showDialog(
+        barrierDismissible: false,
+        context: context,
+        builder: (BuildContext context){
+          return new Dialog(
+            //backgroundColor: Colors.transparent,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0)
+            ),
+            elevation: 0.0,
+            backgroundColor: Colors.transparent,
+            child: Stack(
+              children: <Widget>[
+                Container(
+                  padding: EdgeInsets.only(
+                      top: _avatarRadius + _padding,
+                      bottom: _padding,
+                      left : _padding,
+                      right: _padding
+                  ),
+                  margin: EdgeInsets.only(top: _avatarRadius),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.rectangle,
+                      borderRadius: BorderRadius.circular(_padding),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.black26,
+                            blurRadius: 10.0,
+                            offset: const Offset(0.0, 10.0)
+                        )
+                      ]
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Text(
+                        titulo,
+                        style: TextStyle(
+                            fontSize: 24.0,
+                            fontWeight: FontWeight.w700
+                        ),
+                      ),
+                      SizedBox(height: 16.0),
+                      Text(
+                        descripcion,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 16.0,
+                        ),
+                      ),
+                      SizedBox(height: 24.0),
+                      Align(
+                          alignment: Alignment.bottomRight,
+                          child: Container(
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                RaisedButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pop(); // To close the dialog
+                                  },
+                                  child: Text("Aceptar", style: TextStyle(
+                                      color: Colors.white
+                                  ),),
+                                  color: Colors.red[800],
+                                ),
+                              ],
+                            ),
+                          )
+                      )
+                    ],
+                  ),
+                ),
+                Positioned(
+                  left: _padding,
+                  right: _padding,
+                  child: CircleAvatar(
+                    backgroundColor: Colors.red[800],
+                    child: Container(
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage("assets/icons/error.png"),
+                              fit: BoxFit.fitHeight
+                          )
+                      ),
+                    ),
+                    //backgroundImage: AssetImage("assets/help.png"),
+                    radius: _avatarRadius,
+                  ),
+                ),
+              ],
+            ),
+
+          );
+        }
+    );
+    return new Future<bool>.value(resultado) ;
+  }
+
+  static  Future<bool> info(BuildContext context, String titulo, String descripcion) async
+  {
+    var resultado = await  showDialog(
+        barrierDismissible: false,
+        context: context,
+        builder: (BuildContext context){
+          return new Dialog(
+            //backgroundColor: Colors.transparent,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0)
+            ),
+            elevation: 0.0,
+            backgroundColor: Colors.transparent,
+            child: Stack(
+              children: <Widget>[
+                Container(
+                  padding: EdgeInsets.only(
+                      top: _avatarRadius + _padding,
+                      bottom: _padding,
+                      left : _padding,
+                      right: _padding
+                  ),
+                  margin: EdgeInsets.only(top: _avatarRadius),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.rectangle,
+                      borderRadius: BorderRadius.circular(_padding),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.black26,
+                            blurRadius: 10.0,
+                            offset: const Offset(0.0, 10.0)
+                        )
+                      ]
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Text(
+                        titulo,
+                        style: TextStyle(
+                            fontSize: 24.0,
+                            fontWeight: FontWeight.w700
+                        ),
+                      ),
+                      SizedBox(height: 16.0),
+                      Text(
+                        descripcion,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 16.0,
+                        ),
+                      ),
+                      SizedBox(height: 24.0),
+                      Align(
+                          alignment: Alignment.bottomRight,
+                          child: Container(
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                RaisedButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pop(); // To close the dialog
+                                  },
+                                  child: Text("Aceptar", style: TextStyle(
+                                      color: Colors.white
+                                  ),),
+                                  color: Colors.lightBlueAccent,
+                                ),
+                              ],
+                            ),
+                          )
+                      )
+                    ],
+                  ),
+                ),
+                Positioned(
+                  left: _padding,
+                  right: _padding,
+                  child: CircleAvatar(
+                    backgroundColor: Colors.lightBlueAccent,
+                    child: Container(
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage("assets/icons/info.png"),
+                              fit: BoxFit.fitHeight
+                          )
+                      ),
+                    ),
+                    //backgroundImage: AssetImage("assets/help.png"),
+                    radius: _avatarRadius,
+                  ),
+                ),
+              ],
+            ),
+
+          );
+        }
+    );
+    return new Future<bool>.value(resultado) ;
+  }
+
+
+   static  Future<bool> warning(BuildContext context, String titulo, String descripcion) async
+  {
+    var resultado = await  showDialog(
+        barrierDismissible: false,
+        context: context,
+        builder: (BuildContext context){
+          return new Dialog(
+            //backgroundColor: Colors.transparent,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0)
+            ),
+            elevation: 0.0,
+            backgroundColor: Colors.transparent,
+            child: Stack(
+              children: <Widget>[
+                Container(
+                  padding: EdgeInsets.only(
+                      top: _avatarRadius + _padding,
+                      bottom: _padding,
+                      left : _padding,
+                      right: _padding
+                  ),
+                  margin: EdgeInsets.only(top: _avatarRadius),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.rectangle,
+                      borderRadius: BorderRadius.circular(_padding),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.black26,
+                            blurRadius: 10.0,
+                            offset: const Offset(0.0, 10.0)
+                        )
+                      ]
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Text(
+                        titulo,
+                        style: TextStyle(
+                            fontSize: 24.0,
+                            fontWeight: FontWeight.w700
+                        ),
+                      ),
+                      SizedBox(height: 16.0),
+                      Text(
+                        descripcion,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 16.0,
+                        ),
+                      ),
+                      SizedBox(height: 24.0),
+                      Align(
+                          alignment: Alignment.bottomRight,
+                          child: Container(
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                RaisedButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pop(); // To close the dialog
+                                  },
+                                  child: Text("Aceptar", style: TextStyle(
+                                      color: Colors.white
+                                  ),),
+                                  color: Colors.yellow[800],
+                                ),
+                              ],
+                            ),
+                          )
+                      )
+                    ],
+                  ),
+                ),
+                Positioned(
+                  left: _padding,
+                  right: _padding,
+                  child: CircleAvatar(
+                    backgroundColor: Colors.yellow[800],
+                    child: Container(
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage("assets/icons/warning.png"),
+                              fit: BoxFit.fitHeight
+                          )
+                      ),
+                    ),
+                    //backgroundImage: AssetImage("assets/help.png"),
+                    radius: _avatarRadius,
+                  ),
+                ),
+              ],
+            ),
+
+          );
+        }
+    );
+    return new Future<bool>.value(resultado) ;
+  }
+
 }
