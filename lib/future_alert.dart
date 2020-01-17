@@ -104,7 +104,7 @@ class FutureAlert
                   child: Container(
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage("assets/icons/help.png"),
+                        image: AssetImage("assets/icons/help.png", package: 'future_alert'),
                         fit: BoxFit.fitHeight
                       )
                     ),
@@ -122,7 +122,7 @@ class FutureAlert
     return new Future<bool>.value(resultado) ;
 }
 
-  static  Future<bool> done(BuildContext context, String titulo, String descripcion) async
+  static  Future<bool> done(BuildContext context, String titulo, String descripcion, {Color colors = const Color(0xFF2E7D32)}) async
   {
     var resultado = await  showDialog(
         barrierDismissible: false,
@@ -190,7 +190,7 @@ class FutureAlert
                                   child: Text("Aceptar", style: TextStyle(
                                       color: Colors.white
                                   ),),
-                                  color: Colors.green[800],
+                                  color: colors,
                                 ),
                               ],
                             ),
@@ -203,11 +203,11 @@ class FutureAlert
                   left: _padding,
                   right: _padding,
                   child: CircleAvatar(
-                    backgroundColor: Colors.green[800],
+                    backgroundColor: colors,
                     child: Container(
                       decoration: BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage("assets/icons/done.png"),
+                              image: AssetImage("assets/icons/done.png", package: 'future_alert'),
                               fit: BoxFit.fitHeight
                           )
                       ),
@@ -310,7 +310,7 @@ class FutureAlert
                     child: Container(
                       decoration: BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage("assets/icons/error.png"),
+                              image: AssetImage("assets/icons/error.png", package: 'future_alert'),
                               fit: BoxFit.fitHeight
                           )
                       ),
@@ -413,7 +413,7 @@ class FutureAlert
                     child: Container(
                       decoration: BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage("assets/icons/info.png"),
+                              image: AssetImage("assets/icons/info.png", package: 'future_alert'),
                               fit: BoxFit.fitHeight
                           )
                       ),
@@ -517,7 +517,7 @@ class FutureAlert
                     child: Container(
                       decoration: BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage("assets/icons/warning.png"),
+                              image: AssetImage("assets/icons/warning.png", package: 'future_alert'),
                               fit: BoxFit.fitHeight
                           )
                       ),
