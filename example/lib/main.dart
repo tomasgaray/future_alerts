@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:future_alert/alert_buttons.dart';
+import 'package:future_alert/constants.dart';
 import 'package:future_alert/future_alert.dart';
 
 void main() => runApp(MyApp());
@@ -101,6 +103,30 @@ class _MyHomePageState extends State<MyHomePage> {
                 });
               },
             ),
+            RaisedButton(
+              color: Colors.orange[800],
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8.0)
+              ),
+              child: Text("Custom", style: TextStyle(color: Colors.white),),
+              onPressed: (){
+                FutureAlert(
+                  context: context,
+                  title: "Custom alert",
+                  description: "hey I'm doing it",
+                  type: AlertType.success,
+                  buttons: [
+                    AlertButtons(
+                      child: Text("Wow Awesome"),
+                      color: Colors.blue[800],
+                      onPressed: (){
+                        print(true);
+                      },
+                    )
+                  ]
+                ).show();
+              },
+            )
           ],
         ),
       ),
