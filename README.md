@@ -25,6 +25,6 @@ The result will be `true/false`:
 
 ## Examples
  
- Home                   |  Done | Question
-:-------------------------:|:-------------------------:|:-------------------------:
-<img src="https://gitlab.com/Josg182/future_alerts/-/raw/master/lib/images/home.png" width="250" height="500">  |  <img src="https://gitlab.com/Josg182/future_alerts/-/raw/master/lib/images/done.png" width="250" height="500"> |  <img src="https://gitlab.com/Josg182/future_alerts/-/raw/master/lib/images/question.png" width="250" height="500"> 
+  Done | Question
+:-------------------------:|:-------------------------:
+  <img src="https://gitlab.com/Josg182/future_alerts/-/raw/master/lib/images/done.png" width="300" height="500"> |  <img src="https://gitlab.com/Josg182/future_alerts/-/raw/master/lib/images/question.png" width="300" height="500"> 
