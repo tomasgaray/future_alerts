@@ -77,8 +77,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   borderRadius: BorderRadius.circular(8.0)
               ),
               child: Text("Warning", style: TextStyle(color: Colors.white),),
-              onPressed: (){
-                FutureAlert.warning(context, "Warning!", "Wow that didn't go well");
+              onPressed: ()async{
+              await  FutureAlert.warning(context, "Warning!", "Wow that didn't go well");
               },
             ),
             RaisedButton(
