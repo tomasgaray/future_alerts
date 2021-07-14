@@ -1,6 +1,6 @@
 # Future_Alert
 
-A Flutter plugin for showing alert dialog in IOS and Toast messages in Android.
+A Flutter plugin for showing alert dialog integrated with async await.
 
 ## Usage
 
