@@ -20,17 +20,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
+  MyHomePage({Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
@@ -51,50 +41,60 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            RaisedButton(
-              color: Colors.green[800],
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.0)
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.green[800],
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8.0)
+                )
               ),
               child: Text("Done", style: TextStyle(color: Colors.white),),
               onPressed: (){
                 FutureAlert.done(context, "Done", "This alert has shown correctly");
               },
             ),
-            RaisedButton(
-              color: Colors.red[800],
-              shape: RoundedRectangleBorder(
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.red[800],
+                shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8.0)
+                )
               ),
               child: Text("Error", style: TextStyle(color: Colors.white),),
               onPressed: (){
                 FutureAlert.error(context, "Error", "You shouldn't have done that");
               },
             ),
-            RaisedButton(
-              color: Colors.yellow[800],
-              shape: RoundedRectangleBorder(
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.yellow[800],
+                shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8.0)
+                )
               ),
               child: Text("Warning", style: TextStyle(color: Colors.white),),
-              onPressed: ()async{
-              await  FutureAlert.warning(context, "Warning!", "Wow that didn't go well");
+              onPressed: (){
+                FutureAlert.warning(context, "Warning!", "Wow that didn't go well");
               },
             ),
-            RaisedButton(
-              color: Colors.blue[800],
-              shape: RoundedRectangleBorder(
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.blue[800],
+                shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8.0)
+                )
               ),
               child: Text("Info", style: TextStyle(color: Colors.white),),
               onPressed: (){
                 FutureAlert.info(context, "Info", "Hey!, I just wanted to say hello");
               },
             ),
-            RaisedButton(
-              color: Colors.blue[800],
-              shape: RoundedRectangleBorder(
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.blue[800],
+                shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8.0)
+                )
               ),
               child: Text("Question", style: TextStyle(color: Colors.white),),
               onPressed: (){
@@ -103,10 +103,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 });
               },
             ),
-            RaisedButton(
-              color: Colors.orange[800],
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.0)
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.orange[800],
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8.0)
+                )
               ),
               child: Text("Custom", style: TextStyle(color: Colors.white),),
               onPressed: (){
@@ -121,6 +123,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       color: Colors.blue[800],
                       onPressed: (){
                         print(true);
+                        Navigator.of(context).pop(true);
                       },
                     )
                   ]

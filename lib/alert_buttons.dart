@@ -4,15 +4,15 @@ import 'package:flutter/widgets.dart';
 class AlertButtons extends StatelessWidget{
   final Widget child;
   final Function onPressed;
-  final Color color;
-  final double width;
+  final Color? color;
+  final double? width;
   final double height;
-  final BorderRadius radius;
+  final BorderRadius? radius;
 
   AlertButtons({
-    Key key,
-    @required this.child,
-    @required this.onPressed,
+    Key? key,
+    required this.child,
+    required this.onPressed,
     this.color,
     this.width,
     this.height = 40.0,
@@ -31,7 +31,7 @@ class AlertButtons extends StatelessWidget{
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          onTap: onPressed,
+          onTap: onPressed as void Function()?,
           child: Center(
             child: child,
           ),

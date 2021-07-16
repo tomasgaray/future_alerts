@@ -2,12 +2,12 @@ name: future_alert
 description: Flutter package to display alerts
 version: 0.0.6
 authors: 
-  - tomasgaraypaz@gmail.com
   - jagurcia21@hotmail.com
-homepage: https://github.com/Josg182/future_alert
+  - tomasgaraypaz@gmail.com
+homepage: https://gitlab.com/Josg182/future_alerts
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
