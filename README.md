@@ -27,4 +27,4 @@ The result will be `true/false`:
  
   Done | Question
 :-------------------------:|:-------------------------:
-  <img src="https://gitlab.com/Josg182/future_alerts/-/raw/master/lib/images/done.png" width="300" height="500"> |  <img src="https://gitlab.com/Josg182/future_alerts/-/raw/master/lib/images/question.png" width="300" height="500"> 
+  <img src="https://github.com/tomasgaray/future_alerts/blob/master/lib/images/done.png?raw=true" width="300" height="500"> |  <img src="https://raw.githubusercontent.com/tomasgaray/future_alerts/refs/heads/master/lib/images/done.png" width="300" height="500"> 
