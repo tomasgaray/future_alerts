@@ -1,7 +1,6 @@
 library future_alert;
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 import 'alert_buttons.dart';
 import 'constants.dart';
@@ -73,7 +72,7 @@ class FutureAlert {
           child: button,
         );
         if (button.width != null && buttons!.length == 1) {
-           alertButtons.add(Expanded(
+          alertButtons.add(Expanded(
             child: button,
           ));
         } else {
@@ -221,7 +220,7 @@ class FutureAlert {
                               children: <Widget>[
                                 ElevatedButton(
                                   style: ElevatedButton.styleFrom(
-                                      primary: Colors.redAccent),
+                                      backgroundColor: Colors.redAccent),
                                   onPressed: () {
                                     Navigator.of(context)
                                         .pop(false); // To close the dialog
@@ -236,7 +235,7 @@ class FutureAlert {
                                 ),
                                 ElevatedButton(
                                   style: ElevatedButton.styleFrom(
-                                      primary: Colors.blue[800]),
+                                      backgroundColor: Colors.blue[800]),
                                   onPressed: () {
                                     Navigator.of(context).pop(true);
                                   },
@@ -328,8 +327,8 @@ class FutureAlert {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 ElevatedButton(
-                                  style:
-                                      ElevatedButton.styleFrom(primary: color),
+                                  style: ElevatedButton.styleFrom(
+                                      backgroundColor: color),
                                   onPressed: () {
                                     Navigator.of(context).pop(true);
                                   },
@@ -424,7 +423,7 @@ class FutureAlert {
                               children: <Widget>[
                                 ElevatedButton(
                                   style: ElevatedButton.styleFrom(
-                                      primary: Colors.red[800]),
+                                      backgroundColor: Colors.red[800]),
                                   onPressed: () {
                                     Navigator.of(context).pop(true);
                                   },
@@ -519,7 +518,7 @@ class FutureAlert {
                               children: <Widget>[
                                 ElevatedButton(
                                   style: ElevatedButton.styleFrom(
-                                      primary: Colors.lightBlueAccent),
+                                      backgroundColor: Colors.lightBlueAccent),
                                   onPressed: () {
                                     Navigator.of(context).pop(true);
                                   },
@@ -614,7 +613,7 @@ class FutureAlert {
                               children: <Widget>[
                                 ElevatedButton(
                                   style: ElevatedButton.styleFrom(
-                                      primary: Colors.yellow[800]),
+                                      backgroundColor: Colors.yellow[800]),
                                   onPressed: () {
                                     Navigator.of(context).pop(true);
                                   },

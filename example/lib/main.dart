@@ -28,11 +28,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
-
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -43,91 +40,102 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: Colors.green[800],
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8.0)
-                )
+                  backgroundColor: Colors.green[800],
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.0))),
+              child: Text(
+                "Done",
+                style: TextStyle(color: Colors.white),
               ),
-              child: Text("Done", style: TextStyle(color: Colors.white),),
-              onPressed: (){
-                FutureAlert.done(context, "Done", "This alert has shown correctly");
+              onPressed: () {
+                FutureAlert.done(
+                    context, "Done", "This alert has shown correctly");
               },
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: Colors.red[800],
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8.0)
-                )
+                  backgroundColor: Colors.red[800],
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.0))),
+              child: Text(
+                "Error",
+                style: TextStyle(color: Colors.white),
               ),
-              child: Text("Error", style: TextStyle(color: Colors.white),),
-              onPressed: (){
-                FutureAlert.error(context, "Error", "You shouldn't have done that");
+              onPressed: () {
+                FutureAlert.error(
+                    context, "Error", "You shouldn't have done that");
               },
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: Colors.yellow[800],
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8.0)
-                )
+                  backgroundColor: Colors.yellow[800],
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.0))),
+              child: Text(
+                "Warning",
+                style: TextStyle(color: Colors.white),
               ),
-              child: Text("Warning", style: TextStyle(color: Colors.white),),
-              onPressed: (){
-                FutureAlert.warning(context, "Warning!", "Wow that didn't go well");
+              onPressed: () {
+                FutureAlert.warning(
+                    context, "Warning!", "Wow that didn't go well");
               },
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: Colors.blue[800],
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8.0)
-                )
+                  backgroundColor: Colors.blue[800],
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.0))),
+              child: Text(
+                "Info",
+                style: TextStyle(color: Colors.white),
               ),
-              child: Text("Info", style: TextStyle(color: Colors.white),),
-              onPressed: (){
-                FutureAlert.info(context, "Info", "Hey!, I just wanted to say hello");
+              onPressed: () {
+                FutureAlert.info(
+                    context, "Info", "Hey!, I just wanted to say hello");
               },
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: Colors.blue[800],
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8.0)
-                )
+                  backgroundColor: Colors.blue[800],
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.0))),
+              child: Text(
+                "Question",
+                style: TextStyle(color: Colors.white),
               ),
-              child: Text("Question", style: TextStyle(color: Colors.white),),
-              onPressed: (){
-                FutureAlert.question(context, "What'd you say?", "Choose wisely").then((value){
+              onPressed: () {
+                FutureAlert.question(
+                        context, "What'd you say?", "Choose wisely")
+                    .then((value) {
                   print(value);
                 });
               },
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: Colors.orange[800],
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8.0)
-                )
+                  backgroundColor: Colors.orange[800],
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.0))),
+              child: Text(
+                "Custom",
+                style: TextStyle(color: Colors.white),
               ),
-              child: Text("Custom", style: TextStyle(color: Colors.white),),
-              onPressed: (){
+              onPressed: () {
                 FutureAlert(
-                  context: context,
-                  title: "Custom alert",
-                  description: "hey I'm doing it",
-                  type: AlertType.success,
-                  buttons: [
-                    AlertButtons(
-                      child: Text("Wow Awesome"),
-                      color: Colors.blue[800],
-                      onPressed: (){
-                        print(true);
-                        Navigator.of(context).pop(true);
-                      },
-                    )
-                  ]
-                ).show();
+                    context: context,
+                    title: "Custom alert",
+                    description: "hey I'm doing it",
+                    type: AlertType.success,
+                    buttons: [
+                      AlertButtons(
+                        child: Text("Wow Awesome"),
+                        color: Colors.blue[800],
+                        onPressed: () {
+                          print(true);
+                          Navigator.of(context).pop(true);
+                        },
+                      )
+                    ]).show();
               },
             )
           ],
