@@ -7,6 +7,6 @@
 
 * NullSafe.
 
-## [1.0.1] - Last flutter update.
+## [1.0.2] - Last flutter update.
 
 * Update the flutter sdk
