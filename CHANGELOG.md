@@ -6,3 +6,7 @@
 ## [0.0.6] - NullSafe.
 
 * NullSafe.
+
+## [1.0.1] - Last flutter update.
+
+* Update the flutter sdk
